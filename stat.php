@@ -35,14 +35,14 @@ if(substr($_COOKIE["USER"],0,3) == "DM2")
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
-            <li><a>ติดต่อเรา</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
         </ul>
         <a href="#" data-target="slider" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 <ul id="slider" class="sidenav">
-    <li class="active"><a href="/TUDM">หน้าแรก</a></li>
-    <li><a href="/TUDM/contact.html">ติดต่อเรา</a></li>
+    <li class="active"><a>หน้าแรก</a></li>
+    <li><a href="contact.html">ติดต่อเรา</a></li>
 </ul>
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
@@ -60,6 +60,13 @@ if(substr($_COOKIE["USER"],0,3) == "DM2")
 
     </div>
 </main>
+<footer style="padding-top:0px!important;margin-top: 40px;background-color: #f5899b" class="page-footer">
+    <div class="footer-copyright">
+        <div style="text-align: center" class="container">
+            © 2020 งานกิจกรรมพัฒนาผู้เรียนโรงเรียนเตรียมอุดมศึกษา
+        </div>
+    </div>
+</footer>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script>

@@ -1,4 +1,8 @@
 <?php
 session_start();
-setcookie("QUE","",time() - 3600);
-session_destroy();
+if(isset($_SESSION["user"]) && $_SESSION["user"] == "admin") {
+    setcookie("QUE", "", time() - 3600);
+    session_destroy();
+}
+header("Location: index.php");
+?>

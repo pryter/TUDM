@@ -1,6 +1,9 @@
 <?php
 session_start();
 require ("system/database.php");
+$section1 = false;
+$section2 = false;
+$topsec = false;
 
 if(isset($_POST["user"]) && isset($_POST["code"])){
     $dbs = new database("database/users.dbs");
@@ -21,11 +24,17 @@ if(isset($_POST["user"]) && isset($_POST["code"])){
 if(isset($_SESSION["code"])){
     if(substr($_SESSION["user"],0,3) == "DM1")
     {
-        $section = 1;
+        $section1 = true;
     }
     if(substr($_SESSION["user"],0,3) == "DM2")
     {
-        $section = 2;
+        $section2 = true;
+    }
+    if($_SESSION["user"] == "admin")
+    {
+        $section2 = true;
+        $section1 = true;
+        $topsec = true;
     }
 ?>
 <!DOCTYPE html>
@@ -170,14 +179,16 @@ if(isset($_SESSION["code"])){
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
-            <li><a>ติดต่อเรา</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
+            <?php if($topsec){ echo '<li><a href="reset.php">ออกจากระบบ</a></li>'; }?>
         </ul>
         <a href="#" data-target="slider" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 <ul id="slider" class="sidenav">
-    <li class="active"><a href="/TUDM">หน้าแรก</a></li>
-    <li><a href="/TUDM/contact.html">ติดต่อเรา</a></li>
+    <li class="active"><a>หน้าแรก</a></li>
+    <li><a href="contact.html">ติดต่อเรา</a></li>
+    <?php if($topsec){ echo '<li><a href="reset.php">ออกจากระบบ</a></li>'; }?>
 </ul>
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
@@ -190,8 +201,9 @@ if(isset($_SESSION["code"])){
         <div class="row">
             <h5>เลือกช่วงเวลาในการคัด</h5>
             <form id="timeselect">
-                <?php if($section == 2){?>
+                <?php if($section2){?>
             <div class="col s12" style="margin-left: 50px">
+                <?php if($topsec){ echo '<h6>คทากรหญิง</h6>'; }?>
                 <p>
                     <label>
                         <input name="time" value="1230" type="checkbox" class="filled-in" />
@@ -278,8 +290,9 @@ if(isset($_SESSION["code"])){
                 </p>
             </div>
         <?php } ?>
-                <?php if($section == 1){?>
+                <?php if($section1){?>
                     <div class="col s12" style="margin-left: 50px">
+                        <?php if($topsec){ echo '<h6>คทากรชาย</h6>'; }?>
                         <p>
                             <label>
                                 <input name="time" value="1630" type="checkbox" class="filled-in" />
@@ -327,6 +340,13 @@ if(isset($_SESSION["code"])){
 
     </div>
 </main>
+<footer style="padding-top:0px!important;margin-top: 40px;background-color: #f5899b" class="page-footer">
+    <div class="footer-copyright">
+        <div style="text-align: center" class="container">
+            © 2020 งานกิจกรรมพัฒนาผู้เรียนโรงเรียนเตรียมอุดมศึกษา
+        </div>
+    </div>
+</footer>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script>
