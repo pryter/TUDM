@@ -13,7 +13,7 @@ if(isset($_COOKIE["QUE"]))
     <link type="text/css" rel="stylesheet" href="css/extra.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
-    <title>ระบบลงทะเบียนเวลาการคัดคทากร</title>
+    <title>ระบบลงทะเบียนเลือกเวลาการคัดคทากร</title>
 </head>
 <body>
 <nav class="cpink" role="navigation">
@@ -21,7 +21,7 @@ if(isset($_COOKIE["QUE"]))
         <a class="brand-logo">
             <img src="images/TUCMC_logo.png" style="height: 35px;vertical-align: middle;margin-right: -13px">
             ระบบลงทะเบียน
-            <span class="hide-on-med-and-down" style="margin-left: -5px">เวลาคัดคทากร</span>
+            <span class="hide-on-med-and-down" style="margin-left: -5px">เลือกเวลาคัดคทากร</span>
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
@@ -37,7 +37,7 @@ if(isset($_COOKIE["QUE"]))
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
         <div class="row">
-            <h4 class="center">ลงทะเบียนเวลาคัดคทากร</h4>
+            <h4 class="center">ลงทะเบียนเลือกเวลาคัดคทากร</h4>
         </div>
         <div class="text-section grey lighten-4 red-text">
             เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
