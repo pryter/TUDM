@@ -1,38 +1,19 @@
+<?php
+if(isset($_COOKIE["QUE"]))
+{
+    header("Location: stat.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/extra.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
     <title>ระบบลงทะเบียนเวลาการคัดคทากร</title>
-    <style>
-        .cpink{
-            background-color: #f5899b;
-        }
-        .brand-logo{
-            font-size: 1.5rem!important;
-        }
-        .codebox{
-            margin: auto;
-            max-width: 550px;
-            margin-top: 60px;
-        }
-        body {
-            background-color: #f5899b;
-            font-family: 'Kanit', serif;
-        }
-        .text-section{
-            margin: 0.5rem 0 1rem 0;
-            border: 1px solid #e0e0e0;
-            border-radius: 3px;
-            background-color: #fff;
-            line-height: 1.5rem;
-            padding: 15px 25px 15px 15px;
-            width: 100%
-        }
-    </style>
 </head>
 <body>
 <nav class="cpink" role="navigation">
@@ -61,15 +42,24 @@
         <div class="text-section grey lighten-4 red-text">
             เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
         </div>
+        <form id="check" action="register.php" method="post">
         <div class="row">
             <div class="input-field col s12">
-                <input id="id" name="code" class="validate invalid" required="" type="number">
-                <label for="id" class="">รหัสลงทะเบียนเวลา</label>
+                <input id="username" name="user" class="validate invalid" required="" type="text">
+                <label for="username" class="">เลขประจำตัวผู้สมัคร</label>
             </div>
         </div>
         <div class="row">
+            <div class="input-field col s12">
+                <input id="id" name="code" class="validate invalid" required="" type="text">
+                <label for="id" class="">รหัสลงทะเบียนเวลา</label>
+            </div>
+        </div>
+        </form>
+        <div class="row">
             <div class="col s12">
-                <a class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock</i>เข้าสู่ระบบ</a>
+                <?php if(isset($_GET["action"]) && $_GET["action"] == "error"){echo '<p class="red-text" style="text-align: center;margin-top: -7px">บัญชีไม่สามารใช้งานได้ โปรดลองอีกครั้ง</p>';} ?>
+                <a id="s_check" class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>เข้าสู่ระบบ</a>
             </div>
         </div>
 
@@ -80,6 +70,11 @@
 <script>
     $(document).ready(function(){
         $('.sidenav').sidenav();
+    });
+</script>
+<script>
+    $("#s_check").on("click",function () {
+        $("#check").submit();
     });
 </script>
 </body>

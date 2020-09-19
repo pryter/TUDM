@@ -1,3 +1,11 @@
+<?php
+if(isset($_COOKIE["QUE"]))
+{
+    $ref = ["1230" => "12.30 - 13.00","1301" => "13.01 - 13.30","1331" => "13.31 - 14.00","1401" => "14.01 - 14.30","1431" => "14.31 - 15.00","1501" => "15.01 - 15.30","1531" => "15.31 - 16.00","1601" => "16.01 - 16.30","1631" => "16.31 - 17.00","1715" => "17.15 - 17.45","1746" => "17.46 - 18.15","1816" => "18.16 - 18.45"];
+}else{
+    header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,21 +39,15 @@
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
         <div class="row">
-            <h4 class="center">ลงทะเบียนเวลาคัดคทากร</h4>
+            <h4 class="center">ลงทะเบียนเสร็จสิ้น</h4>
+        </div>
+        <div class="text-section grey lighten-4 blue-text" style="font-size: 18px;text-align: center">
+            ช่วงเวลาคัดของคุณ: <?php echo $ref[$_COOKIE["QUE"]]; ?> วันที่ 24 กันยายน พ.ศ.2563
         </div>
         <div class="text-section grey lighten-4 red-text">
-            เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="id" name="code" class="validate invalid" required="" type="number">
-                <label for="id" class="">รหัสลงทะเบียนเวลา</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <a class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>เข้าสู่ระบบ</a>
-            </div>
+            <p>*หมายเหตุ* ผู้สมัครควรมาก่อนเวลาคัดเล็กน้อย เนื่องจากระยะเวลาการคัดอาจมีความไม่แน่นอนและสามารถเปลี่ยนแปลงได้ตามดุลยพินิจของคณะกรรมการ</p>
+            <p>ทั้งนี้หากผู้สมัครไม่มาตามเวลาที่เลือกไว้จะถือว่าเป็นการสละสิทธิ์</p>
+            <p>มีข้อสงสัยเพิ่มเติมสามารถติดต่อได้ที่ คณะกรรมการกิจกรรมพัฒนาผู้เรียน IG: tucmc_official</p>
         </div>
 
     </div>
@@ -55,6 +57,11 @@
 <script>
     $(document).ready(function(){
         $('.sidenav').sidenav();
+    });
+</script>
+<script>
+    $("#s_check").on("click",function () {
+        $("#check").submit();
     });
 </script>
 </body>
