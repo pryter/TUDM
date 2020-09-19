@@ -19,6 +19,14 @@ if(isset($_POST["user"]) && isset($_POST["code"])){
 }
 
 if(isset($_SESSION["code"])){
+    if(substr($_SESSION["user"],0,3) == "DM1")
+    {
+        $section = 1;
+    }
+    if(substr($_SESSION["user"],0,3) == "DM2")
+    {
+        $section = 2;
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -182,6 +190,7 @@ if(isset($_SESSION["code"])){
         <div class="row">
             <h5>เลือกช่วงเวลาในการคัด</h5>
             <form id="timeselect">
+                <?php if($section == 2){?>
             <div class="col s12" style="margin-left: 50px">
                 <p>
                     <label>
@@ -268,6 +277,46 @@ if(isset($_SESSION["code"])){
                     <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1816_c">6</span> ที่</span>
                 </p>
             </div>
+        <?php } ?>
+                <?php if($section == 1){?>
+                    <div class="col s12" style="margin-left: 50px">
+                        <p>
+                            <label>
+                                <input name="time" value="1630" type="checkbox" class="filled-in" />
+                                <span class="timetag">16.30 - 17.00</span>
+                            </label>
+                            <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1630_c">6</span> ที่</span>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="time" value="1701" type="checkbox" class="filled-in" />
+                                <span class="timetag">17.01 - 17.30</span>
+                            </label>
+                            <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1701_c">6</span> ที่</span>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="time" value="1731" type="checkbox" class="filled-in" />
+                                <span class="timetag">17.31 - 18.00</span>
+                            </label>
+                            <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1731_c">6</span> ที่</span>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="time" value="1801" type="checkbox" class="filled-in" />
+                                <span class="timetag">18.01 - 18.30</span>
+                            </label>
+                            <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1801_c">6</span> ที่</span>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="time" value="1831" type="checkbox" class="filled-in" />
+                                <span class="timetag">18.31 - 19.00</span>
+                            </label>
+                            <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1831_c">6</span> ที่</span>
+                        </p>
+                    </div>
+                <?php } ?>
             </form>
         </div>
         <div class="row">
