@@ -28,7 +28,7 @@ if(isset($_SESSION["code"])){
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
-    <title>ระบบลงทะเบียนเวลาการคัดคทากร</title>
+    <title>ระบบลงทะเบียนเลือกเวลาการคัดคทากร</title>
     <style>
         .cpink{
             background-color: #f5899b;
@@ -158,7 +158,7 @@ if(isset($_SESSION["code"])){
         <a class="brand-logo">
             <img src="images/TUCMC_logo.png" style="height: 35px;vertical-align: middle;margin-right: -13px">
             ระบบลงทะเบียน
-            <span class="hide-on-med-and-down" style="margin-left: -5px">เวลาคัดคทากร</span>
+            <span class="hide-on-med-and-down" style="margin-left: -5px">เลือกเวลาคัดคทากร</span>
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
@@ -174,7 +174,7 @@ if(isset($_SESSION["code"])){
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
         <div class="row">
-            <h4 class="center">ลงทะเบียนเวลาคัดคทากร</h4>
+            <h4 class="center">ลงทะเบียนเลือกเวลาคัดคทากร</h4>
         </div>
         <div class="text-section grey lighten-4 red-text">
             เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
@@ -272,7 +272,7 @@ if(isset($_SESSION["code"])){
         </div>
         <div class="row">
             <div class="col s12">
-                <a onclick="submit()" id="submitb" class="waves-effect waves-light btn-large blue disabled" style="width: 100%"><i class="material-icons left">lock</i>ยืนยันเวลา</a>
+                <?php if($_SESSION["user"] != "admin"){ echo '<a onclick="submit()" id="submitb" class="waves-effect waves-light btn-large blue disabled" style="width: 100%"><i class="material-icons left">lock</i>ยืนยันเวลา</a>';}?>
             </div>
         </div>
 

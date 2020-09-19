@@ -1,7 +1,12 @@
 <?php
+session_start();
 if(isset($_COOKIE["QUE"]))
 {
     header("Location: stat.php");
+}
+if(isset($_SESSION["code"]))
+{
+    header("Location: register.php");
 }
 ?>
 <!DOCTYPE html>
