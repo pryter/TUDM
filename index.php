@@ -1,5 +1,6 @@
 <?php
 session_start();
+$timer = 1600538797;
 if(isset($_COOKIE["QUE"]))
 {
     header("Location: stat.php");
@@ -44,8 +45,10 @@ if(isset($_SESSION["code"]))
         <div class="row">
             <h4 class="center">ลงทะเบียนเลือกเวลาคัดคทากร</h4>
         </div>
+        <?php
+        if(time() >= $timer){?>
         <div class="text-section grey lighten-4 red-text">
-            เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
+            เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการงานกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
         </div>
         <form id="check" action="register.php" method="post">
         <div class="row">
@@ -67,6 +70,34 @@ if(isset($_SESSION["code"]))
                 <a id="s_check" class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>เข้าสู่ระบบ</a>
             </div>
         </div>
+        <?php }else{?>
+            <h1 style="margin-top:0px;text-align: center;font-size: 100px"><span id="cmin">00</span>:<span id="csec">00</span></h1>
+            <div class="text-section grey lighten-4 blue-text">
+                หลังจากระบบเปิดแล้วกรุณาเลือกเวลาด้วยความระมัดระวัง หากลงเวลาแล้วจะไม่สามารถแก้ไขได้ มีปัญหาสอบถามได้ที่ IG: tucmc_official
+            </div>
+            <script>
+                function towd(n) {
+                    return (n < 10 ? '0' : '') + n;
+                }
+                function retime(){
+                    var now = new Date().getTime();
+                    var distance = (<?php echo $timer;?>*1000) - now;
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    document.getElementById("cmin").innerText = towd(minutes);
+                    document.getElementById("csec").innerText = towd(seconds);
+                    return distance;
+                }
+                retime();
+                var cdown = setInterval(function() {
+                    var distance = retime();
+                    if (distance <= 0) {
+                        clearInterval(cdown);
+                        window.location = "index.php";
+                    }
+                }, 1000);
+            </script>
+        <?php } ?>
 
     </div>
 </main>
