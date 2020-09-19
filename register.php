@@ -260,7 +260,7 @@ if(isset($_SESSION["code"])){
                         <input name="time" value="1715" type="checkbox" class="filled-in" />
                         <span class="timetag">17.15 - 17.45</span>
                     </label>
-                    <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1751_c">6</span> ที่</span>
+                    <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1715_c">6</span> ที่</span>
                 </p>
                 <p>
                     <label>

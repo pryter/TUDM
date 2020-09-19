@@ -12,7 +12,7 @@ if(isset($_POST["time"]) && isset($_SESSION["user"]))
         if($res){
             $db2 = new database("database/users.dbs");
             setcookie("QUE",$_POST["time"],time() + (10 * 365 * 24 * 60 * 60));
-            setcookie("USER",$_POST["user"],time() + (10 * 365 * 24 * 60 * 60));
+            setcookie("USER",$_SESSION["user"],time() + (10 * 365 * 24 * 60 * 60));
             $db2->eliminate($_SESSION["user"]);
             session_destroy();
             $status = "success";
