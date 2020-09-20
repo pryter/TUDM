@@ -32,9 +32,7 @@ if(isset($_SESSION["code"])){
     }
     if($_SESSION["user"] == "admin")
     {
-        $section2 = true;
-        $section1 = true;
-        $topsec = true;
+        header("Location: controller.php");
     }
 ?>
 <!DOCTYPE html>
@@ -148,7 +146,6 @@ if(isset($_SESSION["code"])){
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
             <li><a href="contact.html">ติดต่อเรา</a></li>
-            <?php if($topsec){ echo '<li><a href="reset.php">ออกจากระบบ</a></li>'; }?>
         </ul>
         <a href="#" data-target="slider" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -156,7 +153,6 @@ if(isset($_SESSION["code"])){
 <ul id="slider" class="sidenav">
     <li class="active"><a>หน้าแรก</a></li>
     <li><a href="contact.html">ติดต่อเรา</a></li>
-    <?php if($topsec){ echo '<li><a href="reset.php">ออกจากระบบ</a></li>'; }?>
 </ul>
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
@@ -171,7 +167,6 @@ if(isset($_SESSION["code"])){
             <form id="timeselect">
                 <?php if($section2){?>
             <div class="col s12" style="margin-left: 50px">
-                <?php if($topsec){ echo '<h6>คทากรหญิง</h6>'; }?>
                 <p>
                     <label>
                         <input name="time" value="1230" type="checkbox" class="filled-in" />
@@ -260,7 +255,6 @@ if(isset($_SESSION["code"])){
         <?php } ?>
                 <?php if($section1){?>
                     <div class="col s12" style="margin-left: 50px">
-                        <?php if($topsec){ echo '<h6>คทากรชาย</h6>'; }?>
                         <p>
                             <label>
                                 <input name="time" value="1630" type="checkbox" class="filled-in" />
@@ -327,7 +321,6 @@ if(isset($_SESSION["code"])){
         $(this).prop('checked', true);
     });
     setInterval(retrieve,100);
-    <?php if($_SESSION["user"] == "admin"){ echo 'document.getElementById("submitb").style.display = "none";'; } ?>
 </script>
 </body>
 </html>
