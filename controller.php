@@ -1,5 +1,18 @@
 <?php
 session_start();
+if(isset($_POST["ndate"]))
+{
+    $unix = strtotime($_POST["ndate"]." ".$_POST["ntime"]);
+    $f = fopen("database/cd.dbs","w");
+    fwrite($f,$unix - 18000);
+    fclose($f);
+}
+$f = fopen("database/cd.dbs","r");
+$stuff = fread($f,filesize("database/cd.dbs"));
+fclose($f);
+$timer = intval($stuff) + 25200;
+$date = gmdate("M d, Y", $timer);
+$time = gmdate("h:i A", $timer);
 if(!isset($_SESSION["user"]) || $_SESSION["user"] != "admin") {
 header("Location: index.php");
 }else{
@@ -130,7 +143,6 @@ header("Location: index.php");
         </div>
         <div class="row">
             <h5>เลือกช่วงเวลาในการคัด</h5>
-            <form id="timeselect">
                 <div class="col s12" style="margin-left: 50px">
                     <h6>คทากรหญิง</h6>
                     <p>
@@ -392,7 +404,14 @@ header("Location: index.php");
                         <li><a id="18316">-</a></li>
                     </ul>
                 </div>
-            </form>
+                <div class="col s12" style="margin-left: 50px;">
+                    <h6>นับเวลาถอยหลัง</h6>
+                    <form id="fews" action="controller.php" method="POST">
+                    <?php echo '<input style="width: 150px" type="text" name="ndate" class="datepicker" value="'.$date.'">';?>
+                    <?php echo '<input style="margin-left:50px; width: 150px" name="ntime" type="text" class="timepicker" value="'.$time.'">';?>
+                    <a style="width: 355px;margin-top: 10px" onclick="$('#fews').submit()" class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>ตั้งเวลา</a>
+                    </form>
+                </div>
         </div>
 
     </div>
@@ -410,6 +429,8 @@ header("Location: index.php");
     $(document).ready(function(){
         $('.sidenav').sidenav();
         $('.dropdown-trigger').dropdown();
+        $('.datepicker').datepicker();
+        $('.timepicker').timepicker();
         updatecolor();
     });
     $(".filled-in").change(function() {

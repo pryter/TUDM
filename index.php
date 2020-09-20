@@ -1,6 +1,8 @@
 <?php
 session_start();
-$timer = 1600538797;
+$f = fopen("database/cd.dbs","r");
+$stuff = fread($f,filesize("database/cd.dbs"));
+$timer = intval($stuff);
 if(isset($_COOKIE["QUE"]))
 {
     header("Location: stat.php");
