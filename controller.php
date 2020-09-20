@@ -4,7 +4,7 @@ if(isset($_POST["ndate"]))
 {
     $unix = strtotime($_POST["ndate"]." ".$_POST["ntime"]);
     $f = fopen("database/cd.dbs","w");
-    fwrite($f,$unix - 18000);
+    fwrite($f,$unix - 25200);
     fclose($f);
 }
 $f = fopen("database/cd.dbs","r");
