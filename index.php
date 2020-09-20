@@ -94,6 +94,8 @@ if(isset($_SESSION["code"]))
                 var cdown = setInterval(function() {
                     var distance = retime();
                     if (distance <= 0) {
+                        document.getElementById("cmin").innerText = "00";
+                        document.getElementById("csec").innerText = "00";
                         clearInterval(cdown);
                         window.location = "index.php";
                     }
