@@ -1,4 +1,7 @@
+Options -Indexes
+
 RewriteEngine on
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^http://(www\.)example.com/.*$ [NC]
-RewriteRule \.(css|dbs)$ - [F]
+RewriteCond %{HTTP_REFERER} ^$ [OR]
+RewriteCond %{HTTP_REFERER} !^https://cactus.in.th/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.cactus.in.th/.*$ [NC]
+RewriteRule .*\.(css|dbs)$ https://cactus.in.th/TUDM [R,NC]

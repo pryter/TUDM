@@ -43,42 +43,10 @@ if(isset($_SESSION["code"])){
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/extra.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
     <title>ระบบลงทะเบียนเวลาการคัดคทากร</title>
-    <style>
-        .cpink{
-            background-color: #f5899b;
-        }
-        .brand-logo{
-            font-size: 1.5rem!important;
-        }
-        .codebox{
-            margin: auto;
-            max-width: 550px;
-            margin-top: 60px;
-        }
-        body {
-            background-color: #f5899b;
-            font-family: 'Kanit', serif;
-        }
-        .text-section{
-            margin: 0.5rem 0 1rem 0;
-            border: 1px solid #e0e0e0;
-            border-radius: 3px;
-            background-color: #fff;
-            line-height: 1.5rem;
-            padding: 15px 25px 15px 15px;
-            width: 100%
-        }
-        .atag{
-            font-size: 1rem;
-            color: #9e9e9e;
-        }
-        .timetag{
-            width: 130px;
-        }
-    </style>
 </head>
 <script>
     function updatecolor() {
@@ -334,13 +302,13 @@ if(isset($_SESSION["code"])){
         </div>
         <div class="row">
             <div class="col s12">
-                <?php if($_SESSION["user"] != "admin"){ echo '<a onclick="submit()" id="submitb" class="waves-effect waves-light btn-large blue disabled" style="width: 100%"><i class="material-icons left">lock</i>ยืนยันเวลา</a>';}?>
+                <a onclick="submit()" id="submitb" class="waves-effect waves-light btn-large blue disabled" style="width: 100%"><i class="material-icons left">lock</i>ยืนยันเวลา</a>
             </div>
         </div>
 
     </div>
 </main>
-<footer style="padding-top:0px!important;margin-top: 40px;background-color: #f5899b" class="page-footer">
+<footer style="background-color: #f5899b;width: 100%" class="page-footer">
     <div class="footer-copyright">
         <div style="text-align: center" class="container">
             © 2020 งานกิจกรรมพัฒนาผู้เรียนโรงเรียนเตรียมอุดมศึกษา
@@ -359,6 +327,7 @@ if(isset($_SESSION["code"])){
         $(this).prop('checked', true);
     });
     setInterval(retrieve,100);
+    <?php if($_SESSION["user"] == "admin"){ echo 'document.getElementById("submitb").style.display = "none";'; } ?>
 </script>
 </body>
 </html>

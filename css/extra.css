@@ -12,7 +12,12 @@
 body {
     background-color: #f5899b;
     font-family: 'Kanit', serif;
+    height:100vh;
+    margin:0;
+    display:flex;
+    flex-direction:column;
 }
+footer{ min-height:70px;margin-top:auto;}
 .text-section{
     margin: 0.5rem 0 1rem 0;
     border: 1px solid #e0e0e0;
@@ -21,4 +26,11 @@ body {
     line-height: 1.5rem;
     padding: 15px 25px 15px 15px;
     width: 100%
+}
+.atag{
+    font-size: 1rem;
+    color: #9e9e9e;
+}
+.timetag{
+    width: 130px;
 }

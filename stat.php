@@ -60,7 +60,7 @@ if(substr($_COOKIE["USER"],0,3) == "DM2")
 
     </div>
 </main>
-<footer style="padding-top:0px!important;margin-top: 40px;background-color: #f5899b" class="page-footer">
+<footer style="background-color: #f5899b;width: 100%" class="page-footer">
     <div class="footer-copyright">
         <div style="text-align: center" class="container">
             © 2020 งานกิจกรรมพัฒนาผู้เรียนโรงเรียนเตรียมอุดมศึกษา

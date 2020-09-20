@@ -66,7 +66,7 @@ if(isset($_SESSION["code"]))
         </form>
         <div class="row">
             <div class="col s12">
-                <?php if(isset($_GET["action"]) && $_GET["action"] == "error"){echo '<p class="red-text" style="text-align: center;margin-top: -7px">บัญชีไม่สามารใช้งานได้ โปรดลองอีกครั้ง</p>';} ?>
+                <?php if(isset($_GET["action"]) && $_GET["action"] == "error"){echo '<p id="err" class="red-text" style="text-align: center;margin-top: -7px">บัญชีไม่สามารใช้งานได้ โปรดลองอีกครั้ง</p>';} ?>
                 <a id="s_check" class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>เข้าสู่ระบบ</a>
             </div>
         </div>
@@ -101,7 +101,7 @@ if(isset($_SESSION["code"]))
 
     </div>
 </main>
-<footer style="padding-top:0px!important;margin-top: 39px;background-color: #f5899b" class="page-footer">
+<footer style="background-color: #f5899b;width: 100%" class="page-footer">
     <div class="footer-copyright">
         <div style="text-align: center" class="container">
             © 2020 งานกิจกรรมพัฒนาผู้เรียนโรงเรียนเตรียมอุดมศึกษา
@@ -125,6 +125,14 @@ if(isset($_SESSION["code"]))
             this.type = "password";
         }else{
             this.type = "text";
+        }
+    });
+    $("input").on("focus",function () {
+        document.getElementById("err").style.display = "none";
+    });
+    $(document).on('keypress',function(e) {
+        if(e.which == 13) {
+            $("#check").submit();
         }
     });
 </script>
