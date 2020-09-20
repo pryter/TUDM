@@ -329,9 +329,9 @@ header("Location: index.php");
                 <div class="col s12" style="margin-left: 50px;">
                     <h6>นับเวลาถอยหลัง</h6>
                     <form id="fews" action="controller.php" method="POST">
-                    <?php echo '<input style="width: 150px" type="text" name="ndate" class="datepicker" value="'.$date.'">';?>
-                    <?php echo '<input style="margin-left:50px; width: 150px" name="ntime" type="text" class="timepicker" value="'.$time.'">';?>
-                    <a style="width: 355px;margin-top: 10px" onclick="$('#fews').submit()" class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>ตั้งเวลา</a>
+                        <?php echo '<input style="width: 35%" type="text" name="ndate" class="datepicker" value="'.$date.'">';?>
+                        <?php echo '<input style="margin-left:6%; width: 30%" name="ntime" type="text" class="timepicker" value="'.$time.'">';?>
+                        <a style="width: 72%;margin-top: 10px" onclick="$('#fews').submit()" class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>ตั้งเวลา</a>
                     </form>
                 </div>
         </div>
