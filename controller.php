@@ -359,7 +359,7 @@ header("Location: index.php");
         $(".filled-in").prop('checked', false);
         $(this).prop('checked', true);
     });
-    setInterval(retrieve,100);
+    setInterval(retrieve,400);
 </script>
 </body>
 </html>
