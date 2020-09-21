@@ -73,7 +73,7 @@ if(isset($_SESSION["code"]))
             </div>
         </div>
         <?php }else{?>
-            <h1 style="margin-top:0px;text-align: center;font-size: 100px"><span id="cmin">00</span>:<span id="csec">00</span></h1>
+            <div id="timertext"><h1 style="margin-top:0px;text-align: center;font-size: 100px"><span id="cmin">00</span>:<span id="csec">00</span></h1></div>
             <div class="text-section grey lighten-4 blue-text">
                 หลังจากระบบเปิดแล้วกรุณาเลือกเวลาด้วยความระมัดระวัง หากลงเวลาแล้วจะไม่สามารถแก้ไขได้ มีปัญหาสอบถามได้ที่ IG: tucmc_official
             </div>
@@ -86,12 +86,16 @@ if(isset($_SESSION["code"]))
                     var distance = (<?php echo $timer;?>*1000) - now;
                     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                    document.getElementById("cmin").innerText = towd(minutes);
-                    document.getElementById("csec").innerText = towd(seconds);
+                    if(distance >= 1000*60*60) {
+                        document.getElementById("timertext").innerHTML = "<br><h5 class='red-text' style='text-align: center'>ระบบยังไม่เปิดให้ลงทะเบียน</h5><br><br>";
+                    }else {
+                        document.getElementById("cmin").innerText = towd(minutes);
+                        document.getElementById("csec").innerText = towd(seconds);
+                    }
                     return distance;
                 }
                 retime();
-                var cdown = setInterval(function() {
+                var cdown = setInterval(function () {
                     var distance = retime();
                     if (distance <= 0) {
                         document.getElementById("cmin").innerText = "00";

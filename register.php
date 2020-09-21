@@ -159,7 +159,7 @@ if(isset($_SESSION["code"])){
                 </p>
                 <p>
                     <label>
-                        <input name="time" value="1816" type="checkbox" class="filled-in" />
+                        <input id="lastg" name="time" value="1816" type="checkbox" class="filled-in" disabled/>
                         <span class="timetag">18.16 - 18.45</span>
                     </label>
                     <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1816_c">6</span> ที่</span>
@@ -198,7 +198,7 @@ if(isset($_SESSION["code"])){
                         </p>
                         <p>
                             <label>
-                                <input name="time" value="1831" type="checkbox" class="filled-in" />
+                                <input id="lastm" name="time" value="1831" type="checkbox" class="filled-in" disabled/>
                                 <span class="timetag">18.31 - 19.00</span>
                             </label>
                             <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1831_c">6</span> ที่</span>
@@ -233,6 +233,7 @@ if(isset($_SESSION["code"])){
         $(".filled-in").prop('checked', false);
         $(this).prop('checked', true);
     });
+    retrieve();
     setInterval(retrieve,400);
 </script>
 </body>

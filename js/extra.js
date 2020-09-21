@@ -46,9 +46,17 @@ function toint(input) {
 
 }
 function fetchdata(obj){
+    window.mcount = 0;
+    window.gcount = 0;
     $(".cnumber").each(function(){
         var key = this.id.replace("_c","");
         this.innerText = 6 - toint(obj[key]);
+        if(toint(key) === 1630 || toint(key) === 1701 || toint(key) === 1731 || toint(key) === 1801 || toint(key) === 1831)
+        {
+            window.mcount += toint(obj[key]);
+        }else{
+            window.gcount += toint(obj[key]);
+        }
         if(parseInt(this.innerText) >= 5)
         {
             this.parentElement.style.color = "#4caf50";
@@ -72,6 +80,14 @@ function fetchdata(obj){
         document.getElementById("submitb").classList.remove("disabled");
     }else{
         document.getElementById("submitb").classList.add("disabled");
+    }
+    if(window.mcount >= 24)
+    {
+        document.getElementById("lastm").disabled = false;
+    }
+    if(window.gcount >= 66)
+    {
+        document.getElementById("lastg").disabled = false;
     }
 
 }
