@@ -13,12 +13,12 @@ if(isset($_POST["user"]) && isset($_POST["code"])){
         $_SESSION["code"] = $_POST["code"];
         $_SESSION["user"] = $_POST["user"];
     }else{
-        header("Location: index.php?action=error");
+        header("Location: startup.php?action=error");
     }
 }else{
     if(!isset($_SESSION["code"]))
     {
-        header("Location: index.php");
+        header("Location: startup.php");
     }
 }
 
@@ -33,7 +33,7 @@ if(isset($_SESSION["code"])){
     }
     if($_SESSION["user"] == "admin")
     {
-        header("Location: controller.php");
+        header("Location: administrator.php");
     }
 ?>
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ if(isset($_SESSION["code"])){
     <meta charset="UTF-8">
     <title>ระบบลงทะเบียนเวลาการคัดคทากร</title>
 </head>
-<script type="text/javascript" src="js/extra.js"></script>
+<script type="text/javascript" src="js/extra_user.js"></script>
 <body>
 <nav class="cpink" role="navigation">
     <div class="nav-wrapper container">

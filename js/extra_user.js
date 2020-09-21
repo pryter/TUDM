@@ -16,7 +16,7 @@ function updatecolor() {
 }
 function retrieve(){
     $.ajax({
-        url: "read.php",
+        url: "readdb.php",
         type: "POST",
         data: {task: "request"},
         success: function(data)
@@ -94,11 +94,11 @@ function fetchdata(obj){
 function submit(){
     $.ajax({
         type: "POST",
-        url: "pushdata.php",
+        url: "senddata.php",
         data: $("#timeselect").serialize(),
         success: function(result)
         {
-            window.location = "register.php";
+            window.location = "select.php";
         }
     });
 

@@ -5,11 +5,11 @@ $stuff = fread($f,filesize("database/cd.dbs"));
 $timer = intval($stuff);
 if(isset($_COOKIE["QUE"]))
 {
-    header("Location: stat.php");
+    header("Location: status.php");
 }
 if(isset($_SESSION["code"]))
 {
-    header("Location: register.php");
+    header("Location: select.php");
 }
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ if(isset($_SESSION["code"]))
         <div class="text-section grey lighten-4 red-text">
             เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการงานกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
         </div>
-        <form id="check" action="register.php" method="post">
+        <form id="check" action="select.php" method="post">
         <div class="row">
             <div class="input-field col s12">
                 <input id="username" name="user" class="validate invalid" required="" type="text">
