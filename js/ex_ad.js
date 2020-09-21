@@ -16,7 +16,7 @@ function updatecolor() {
 }
 function retrieve(){
     $.ajax({
-        url: "readdbs.php",
+        url: "readdbase.php",
         type: "POST",
         data: {task: "request"},
         success: function(data)

@@ -13,12 +13,12 @@ if(isset($_POST["user"]) && isset($_POST["code"])){
         $_SESSION["code"] = $_POST["code"];
         $_SESSION["user"] = $_POST["user"];
     }else{
-        header("Location: landing.php?action=error");
+        header("Location: main.php?action=error");
     }
 }else{
     if(!isset($_SESSION["code"]))
     {
-        header("Location: landing.php");
+        header("Location: main.php");
     }
 }
 
@@ -33,7 +33,7 @@ if(isset($_SESSION["code"])){
     }
     if($_SESSION["user"] == "admin")
     {
-        header("Location: admin.php");
+        header("Location: adminpage.php");
     }
 ?>
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ if(isset($_SESSION["code"])){
     <meta charset="UTF-8">
     <title>ระบบลงทะเบียนเวลาการคัดคทากร</title>
 </head>
-<script type="text/javascript" src="js/ex_user.js"></script>
+<script type="text/javascript" src="js/ex_us.js"></script>
 <body>
 <nav class="cpink" role="navigation">
     <div class="nav-wrapper container">
@@ -67,14 +67,14 @@ if(isset($_SESSION["code"])){
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
-            <li><a href="contacts.html">ติดต่อเรา</a></li>
+            <li><a href="contactus.html">ติดต่อเรา</a></li>
         </ul>
         <a href="#" data-target="slider" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 <ul id="slider" class="sidenav">
     <li class="active"><a>หน้าแรก</a></li>
-    <li><a href="contacts.html">ติดต่อเรา</a></li>
+    <li><a href="contactus.html">ติดต่อเรา</a></li>
 </ul>
 <main class="container">
     <div class="z-depth-1 card-panel codebox">

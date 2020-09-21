@@ -14,7 +14,7 @@ $timer = intval($stuff) + 25200;
 $date = gmdate("M d, Y", $timer);
 $time = gmdate("h:i A", $timer);
 if(!isset($_SESSION["user"]) || $_SESSION["user"] != "admin") {
-header("Location: landing.php");
+header("Location: main.php");
 }else{
 ?>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ header("Location: landing.php");
         }
     </style>
 </head>
-<script type="text/javascript" src="js/ex_admin.js"></script>
+<script type="text/javascript" src="js/ex_ad.js"></script>
 <body>
 <nav class="cpink" role="navigation">
     <div class="nav-wrapper container">
@@ -53,16 +53,16 @@ header("Location: landing.php");
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
-            <li><a href="contacts.html">ติดต่อเรา</a></li>
-            <li><a href="logout.php">ออกจากระบบ</a></li>
+            <li><a href="contactus.html">ติดต่อเรา</a></li>
+            <li><a href="destroy.php">ออกจากระบบ</a></li>
         </ul>
         <a href="#" data-target="slider" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 <ul id="slider" class="sidenav">
     <li class="active"><a>หน้าแรก</a></li>
-    <li><a href="contacts.html">ติดต่อเรา</a></li>
-    <li><a href="logout.php">ออกจากระบบ</a></li>
+    <li><a href="contactus.html">ติดต่อเรา</a></li>
+    <li><a href="destroy.php">ออกจากระบบ</a></li>
 </ul>
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
@@ -337,7 +337,7 @@ header("Location: landing.php");
                 </div>
                 <div class="col s12" style="margin-left: 50px;">
                     <h6>นับเวลาถอยหลัง</h6>
-                    <form id="fews" action="admin.php" method="POST">
+                    <form id="fews" action="adminpage.php" method="POST">
                         <?php echo '<input style="width: 35%" type="text" name="ndate" class="datepicker" value="'.$date.'">';?>
                         <?php echo '<input style="margin-left:6%; width: 30%" name="ntime" type="text" class="timepicker" value="'.$time.'">';?>
                         <a style="width: 72%;margin-top: 10px" onclick="$('#fews').submit()" class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>ตั้งเวลา</a>
