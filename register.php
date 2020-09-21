@@ -1,6 +1,7 @@
 <?php
 session_start();
 require ("system/database.php");
+session_regenerate_id();
 $section1 = false;
 $section2 = false;
 $topsec = false;
