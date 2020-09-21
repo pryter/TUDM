@@ -89,6 +89,7 @@ if(isset($_SESSION["code"]))
                     if(distance >= 1000*60*60) {
                         document.getElementById("timertext").innerHTML = "<br><h5 class='red-text' style='text-align: center'>ระบบยังไม่เปิดให้ลงทะเบียน</h5><br><br>";
                     }else {
+                        document.getElementById("timertext").innerHTML = "<h1 style=\"margin-top:0px;text-align: center;font-size: 100px\"><span id=\"cmin\">00</span>:<span id=\"csec\">00</span></h1>";
                         document.getElementById("cmin").innerText = towd(minutes);
                         document.getElementById("csec").innerText = towd(seconds);
                     }
