@@ -16,7 +16,7 @@ function updatecolor() {
 }
 function retrieve(){
     $.ajax({
-        url: "readdbase.php",
+        url: "readddbb.php",
         type: "POST",
         data: {task: "request"},
         success: function(data)
@@ -83,22 +83,22 @@ function fetchdata(obj){
     }
     if(window.mcount >= 24)
     {
-        document.getElementById("lastm").disabled = false;
+        $("#lastm").prop("disabled",false);
     }
     if(window.gcount >= 66)
     {
-        document.getElementById("lastg").disabled = false;
+        $("#lastg").prop("disabled",false);
     }
 
 }
 function submit(){
     $.ajax({
         type: "POST",
-        url: "pushdbase.php",
+        url: "pushddbb.php",
         data: $("#timeselect").serialize(),
         success: function(result)
         {
-            window.location = "userpage.php";
+            window.location = "userp.php";
         }
     });
 

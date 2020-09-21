@@ -13,12 +13,12 @@ if(isset($_POST["user"]) && isset($_POST["code"])){
         $_SESSION["code"] = $_POST["code"];
         $_SESSION["user"] = $_POST["user"];
     }else{
-        header("Location: main.php?action=error");
+        header("Location: mainpage.php?action=error");
     }
 }else{
     if(!isset($_SESSION["code"]))
     {
-        header("Location: main.php");
+        header("Location: mainpage.php");
     }
 }
 
@@ -33,7 +33,7 @@ if(isset($_SESSION["code"])){
     }
     if($_SESSION["user"] == "admin")
     {
-        header("Location: adminpage.php");
+        header("Location: adminp.php");
     }
 ?>
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ if(isset($_SESSION["code"])){
     <meta charset="UTF-8">
     <title>ระบบลงทะเบียนเวลาการคัดคทากร</title>
 </head>
-<script type="text/javascript" src="js/ex_us.js"></script>
+<script type="text/javascript" src="js/ex_usr.js"></script>
 <body>
 <nav class="cpink" role="navigation">
     <div class="nav-wrapper container">
@@ -67,14 +67,14 @@ if(isset($_SESSION["code"])){
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
-            <li><a href="contactus.html">ติดต่อเรา</a></li>
+            <li><a href="cont.html">ติดต่อเรา</a></li>
         </ul>
         <a href="#" data-target="slider" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 <ul id="slider" class="sidenav">
     <li class="active"><a>หน้าแรก</a></li>
-    <li><a href="contactus.html">ติดต่อเรา</a></li>
+    <li><a href="cont.html">ติดต่อเรา</a></li>
 </ul>
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
@@ -168,7 +168,7 @@ if(isset($_SESSION["code"])){
                 </p>
                 <p>
                     <label>
-                        <input id="lastg" name="time" value="1816" type="checkbox" class="filled-in" disabled/>
+                        <input name="time" id="lastg" value="1816" type="checkbox" class="filled-in" disabled/>
                         <span class="timetag">18.16 - 18.45</span>
                     </label>
                     <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1816_c">6</span> ที่</span>
@@ -207,7 +207,7 @@ if(isset($_SESSION["code"])){
                         </p>
                         <p>
                             <label>
-                                <input id="lastm" name="time" value="1831" type="checkbox" class="filled-in" disabled/>
+                                <input name="time" id="lastm" value="1831" type="checkbox" class="filled-in" disabled/>
                                 <span class="timetag">18.31 - 19.00</span>
                             </label>
                             <span class="atag">เหลือที่ว่าง <span class="cnumber" id="1831_c">6</span> ที่</span>

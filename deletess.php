@@ -5,5 +5,5 @@ if(isset($_SESSION["user"]) && $_SESSION["user"] == "admin") {
     setcookie("USER", "", time() - 3600);
     session_destroy();
 }
-header("Location: main.php");
+header("Location: mainpage.php");
 ?>
