@@ -146,7 +146,9 @@ if(isset($_SESSION["code"]))
         }
     });
     $("input").on("focus",function () {
-        document.getElementById("err").style.display = "none";
+        if(document.getElementById("err")){
+            document.getElementById("err").style.display = "none";
+        }
     });
     $(document).on('keypress',function(e) {
         if(e.which == 13) {
