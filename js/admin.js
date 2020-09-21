@@ -17,6 +17,8 @@ function updatecolor() {
 function retrieve(){
     $.ajax({
         url: "read.php",
+        type: "POST",
+        data: {task: "request"},
         success: function(data)
         {
             var stuff = [];
