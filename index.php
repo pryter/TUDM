@@ -68,7 +68,7 @@ if(isset($_SESSION["code"]))
         </form>
         <div class="row">
             <div class="col s12">
-                <?php if(isset($_GET["action"]) && $_GET["action"] == "error"){echo '<p id="err" class="red-text" style="text-align: center;margin-top: -7px">บัญชีไม่สามารใช้งานได้ โปรดลองอีกครั้ง</p>';} ?>
+                <?php if(isset($_GET["action"]) && $_GET["action"] == "error"){echo '<p id="err" class="red-text" style="text-align: center;margin-top: -7px">บัญชีไม่สามารถใช้งานได้ โปรดลองอีกครั้ง</p>';} ?>
                 <a id="s_check" class="waves-effect waves-light btn-large blue" style="width: 100%" href="#"><i class="material-icons left">lock_open</i>เข้าสู่ระบบ</a>
             </div>
         </div>
