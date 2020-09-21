@@ -22,7 +22,7 @@ if(isset($_POST["time"]) && isset($_SESSION["user"]))
             setcookie("QUE", "", time() - 3600);
             setcookie("USER", "", time() - 3600);
             session_destroy();
-            header("Location: startup.php");
+            header("Location: landing.php");
         }
     }
     echo json_encode(array("re" => $status));

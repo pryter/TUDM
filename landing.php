@@ -5,11 +5,11 @@ $stuff = fread($f,filesize("database/cd.dbs"));
 $timer = intval($stuff);
 if(isset($_COOKIE["QUE"]))
 {
-    header("Location: status.php");
+    header("Location: info.php");
 }
 if(isset($_SESSION["code"]))
 {
-    header("Location: select.php");
+    header("Location: userselect.php");
 }
 ?>
 <!DOCTYPE html>
@@ -42,14 +42,14 @@ if(isset($_SESSION["code"]))
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
-            <li><a href="contact.html">ติดต่อเรา</a></li>
+            <li><a href="contacts.html">ติดต่อเรา</a></li>
         </ul>
         <a href="#" data-target="slider" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 <ul id="slider" class="sidenav">
     <li class="active"><a>หน้าแรก</a></li>
-    <li><a href="contact.html">ติดต่อเรา</a></li>
+    <li><a href="contacts.html">ติดต่อเรา</a></li>
 </ul>
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
@@ -61,7 +61,7 @@ if(isset($_SESSION["code"]))
         <div class="text-section grey lighten-4 red-text">
             เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการงานกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
         </div>
-        <form id="check" action="select.php" method="post">
+        <form id="check" action="userselect.php" method="post">
         <div class="row">
             <div class="input-field col s12">
                 <input id="username" name="user" class="validate invalid" required="" type="text">

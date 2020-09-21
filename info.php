@@ -3,7 +3,7 @@ if(isset($_COOKIE["QUE"]))
 {
     $ref = ["1230" => "12.30 - 13.00","1301" => "13.01 - 13.30","1331" => "13.31 - 14.00","1401" => "14.01 - 14.30","1431" => "14.31 - 15.00","1501" => "15.01 - 15.30","1531" => "15.31 - 16.00","1601" => "16.01 - 16.30","1631" => "16.31 - 17.00","1715" => "17.15 - 17.45","1746" => "17.46 - 18.15","1816" => "18.16 - 18.45","1630" => "16.30 - 17.00","1701" => "17.01 - 17.30","1731" => "17.31 - 18.00","1801" => "18.01 - 18.30","19.00" => "18.31 - 19.00"];
 }else{
-    header("Location: startup.php");
+    header("Location: landing.php");
 }
 if(substr($_COOKIE["USER"],0,3) == "DM1")
 {
@@ -44,14 +44,14 @@ if(substr($_COOKIE["USER"],0,3) == "DM2")
         </a>
         <ul class="right hide-on-med-and-down">
             <li class="active"><a>หน้าแรก</a></li>
-            <li><a href="contact.html">ติดต่อเรา</a></li>
+            <li><a href="contacts.html">ติดต่อเรา</a></li>
         </ul>
         <a href="#" data-target="slider" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 <ul id="slider" class="sidenav">
     <li class="active"><a>หน้าแรก</a></li>
-    <li><a href="contact.html">ติดต่อเรา</a></li>
+    <li><a href="contacts.html">ติดต่อเรา</a></li>
 </ul>
 <main class="container">
     <div class="z-depth-1 card-panel codebox">
