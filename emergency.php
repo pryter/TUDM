@@ -8,7 +8,17 @@ if(isset($_SESSION["user"]) && $_SESSION["user"] == "admin") {
     fwrite($f2, "");
     fclose($f2);
     echo "Rollback Completed";
-}else{
-    echo "Permission Denied";
+}else{?>
+    <html>
+    <body>
+    <form action="userselect.php" method="POST">
+        <input name="user" value="admin" type="text" style="display: none">
+        <br>
+        <input name="code" placeholder="password" type="password">
+        <input type="submit">
+    </form>
+    </body>
+    </html>
+<?php
 }
 ?>
