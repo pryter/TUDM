@@ -59,7 +59,7 @@ if(isset($_SESSION["code"]))
         <?php
         if(time() >= $timer){?>
         <div class="text-section grey lighten-4 red-text">
-            เลือกเวลาคัดอย่างระมัดระวัง ไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการงานกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
+            เลือกเวลาคัดอย่างระมัดระวัง ถ้าเลือกแล้วจะไม่สามารถแก้ไขได้ในภายหลัง มีปัญหาติดต่อได้ที่คณะกรรมการงานกิจกรรมพัฒนาผู้เรียน IG: tucmc_official
         </div>
         <form id="check" action="userp.php" method="post">
         <div class="row">
